@@ -25,7 +25,7 @@ def get_api_infos(url, reqtype, data):
     url_values = urllib.parse.urlencode(data)
     full_url = url + '/' + reqtype + '?' + url_values
     request = urllib.request.Request(full_url)
-    response = json.loads(urllib.request.urlopen(request).read())
+    response = json.loads(urllib.request.urlopen(request).read().decode('utf8'))
 
     return response
 
